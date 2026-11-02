@@ -1,8 +1,10 @@
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import Pricing from '@/components/sections/Pricing';
-
+import Hero from '@/components/sections/Hero';
 // Dynamically import Hero to avoid server‑side rendering issues
-const Hero = dynamic(() => import('@/components/sections/Hero'), { ssr: false });
+// const Hero = dynamic(() => import('@/components/sections/Hero'), { ssr: false });
+
+
 
 export default function HomePage() {
   return (
