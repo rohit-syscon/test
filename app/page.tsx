@@ -1,4 +1,8 @@
-import Hero from '@/components/sections/Hero';
+import dynamic from 'next/dynamic';
+import Pricing from '@/components/sections/Pricing';
+
+// Dynamically import Hero to avoid server‑side rendering issues
+const Hero = dynamic(() => import('@/components/sections/Hero'), { ssr: false });
 
 export default function HomePage() {
   return (
@@ -9,6 +13,7 @@ export default function HomePage() {
         ctaLabel="Get in touch"
         ctaHref="#contact"
       />
+      <Pricing />
     </main>
   );
 }
