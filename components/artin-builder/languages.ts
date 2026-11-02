@@ -1,0 +1,47 @@
+// Artin page builder v17. Rewritten when the builder is updated; your other files are never touched.
+/** The languages a site can be in. No imports: safe in the browser (`@artin/cms-core/languages`). */
+
+/** Languages offered, with their own names (shown to visitors in the language switcher). */
+export const LANGUAGES: ReadonlyArray<{ code: string; name: string; native: string; rtl?: boolean }> = [
+  { code: 'en', name: 'English', native: 'English' },
+  { code: 'hi', name: 'Hindi', native: 'हिन्दी' },
+  { code: 'bn', name: 'Bengali', native: 'বাংলা' },
+  { code: 'ta', name: 'Tamil', native: 'தமிழ்' },
+  { code: 'te', name: 'Telugu', native: 'తెలుగు' },
+  { code: 'mr', name: 'Marathi', native: 'मराठी' },
+  { code: 'gu', name: 'Gujarati', native: 'ગુજરાતી' },
+  { code: 'kn', name: 'Kannada', native: 'ಕನ್ನಡ' },
+  { code: 'ml', name: 'Malayalam', native: 'മലയാളം' },
+  { code: 'pa', name: 'Punjabi', native: 'ਪੰਜਾਬੀ' },
+  { code: 'or', name: 'Odia', native: 'ଓଡ଼ିଆ' },
+  { code: 'as', name: 'Assamese', native: 'অসমীয়া' },
+  { code: 'ur', name: 'Urdu', native: 'اردو', rtl: true },
+  { code: 'ne', name: 'Nepali', native: 'नेपाली' },
+  { code: 'si', name: 'Sinhala', native: 'සිංහල' },
+  { code: 'ar', name: 'Arabic', native: 'العربية', rtl: true },
+  { code: 'fa', name: 'Persian', native: 'فارسی', rtl: true },
+  { code: 'he', name: 'Hebrew', native: 'עברית', rtl: true },
+  { code: 'fr', name: 'French', native: 'Français' },
+  { code: 'de', name: 'German', native: 'Deutsch' },
+  { code: 'es', name: 'Spanish', native: 'Español' },
+  { code: 'pt', name: 'Portuguese', native: 'Português' },
+  { code: 'it', name: 'Italian', native: 'Italiano' },
+  { code: 'nl', name: 'Dutch', native: 'Nederlands' },
+  { code: 'sv', name: 'Swedish', native: 'Svenska' },
+  { code: 'pl', name: 'Polish', native: 'Polski' },
+  { code: 'tr', name: 'Turkish', native: 'Türkçe' },
+  { code: 'ru', name: 'Russian', native: 'Русский' },
+  { code: 'uk', name: 'Ukrainian', native: 'Українська' },
+  { code: 'el', name: 'Greek', native: 'Ελληνικά' },
+  { code: 'zh', name: 'Chinese', native: '中文' },
+  { code: 'ja', name: 'Japanese', native: '日本語' },
+  { code: 'ko', name: 'Korean', native: '한국어' },
+  { code: 'id', name: 'Indonesian', native: 'Bahasa Indonesia' },
+  { code: 'ms', name: 'Malay', native: 'Bahasa Melayu' },
+  { code: 'th', name: 'Thai', native: 'ไทย' },
+  { code: 'vi', name: 'Vietnamese', native: 'Tiếng Việt' },
+  { code: 'fil', name: 'Filipino', native: 'Filipino' },
+  { code: 'sw', name: 'Swahili', native: 'Kiswahili' },
+];
+export const LANGUAGE_BY_CODE = new Map(LANGUAGES.map((l) => [l.code, l]));
+export const MAX_LOCALES = 10;
