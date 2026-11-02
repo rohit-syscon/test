@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. The visual builder's color, type and spacing controls pick
+ * from these, so change the site's look here rather than in components.
+ */
+@theme {
+  --color-brand: #1f4fd1;
+  --color-brand-ink: #ffffff;
+  --color-ink: #111827;
+  --color-muted: #4b5563;
+  --color-surface: #ffffff;
+  --color-subtle: #f3f4f6;
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
