@@ -5,12 +5,12 @@
  * from these, so change the site's look here rather than in components.
  */
 @theme {
-  --color-brand: #1f4fd1;
+  --color-brand: #0f2b5b; /* darker premium blue */
   --color-brand-ink: #ffffff;
-  --color-ink: #111827;
-  --color-muted: #4b5563;
-  --color-surface: #ffffff;
-  --color-subtle: #f3f4f6;
+  --color-ink: #e5e7eb; /* light text for dark background */
+  --color-muted: #9ca3af; /* lighter muted for contrast */
+  --color-surface: #111827; /* dark surface */
+  --color-subtle: #1f2937; /* subtle dark background */
   --font-sans: ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -18,3 +18,6 @@ body {
   background: var(--color-surface);
   color: var(--color-ink);
 }
+
+/* Add extra vertical spacing to all section containers */
+.section { @apply py-16; }
