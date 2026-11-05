@@ -1,4 +1,4 @@
-// Artin page builder v17. Rewritten when the builder is updated; your other files are never touched.
+// Artin page builder v18. Rewritten when the builder is updated; your other files are never touched.
 /**
  * The builder's icons as path data: 24 × 24, stroked with the current
  * colour; brand marks are filled.

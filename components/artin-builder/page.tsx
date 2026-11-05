@@ -1,4 +1,4 @@
-// Artin page builder v17. Rewritten when the builder is updated; your other files are never touched.
+// Artin page builder v18. Rewritten when the builder is updated; your other files are never touched.
 import type { ReactNode } from 'react';
 
 import { BASE_CSS, fontsOf, pageCss } from './css';

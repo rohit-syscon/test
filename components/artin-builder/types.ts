@@ -1,4 +1,4 @@
-// Artin page builder v17. Rewritten when the builder is updated; your other files are never touched.
+// Artin page builder v18. Rewritten when the builder is updated; your other files are never touched.
 /**
  * The shape of an Artin builder page: sections, which hold columns, which
  * hold widgets. Every element carries its settings (what it shows) and its

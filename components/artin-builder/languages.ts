@@ -1,4 +1,4 @@
-// Artin page builder v17. Rewritten when the builder is updated; your other files are never touched.
+// Artin page builder v18. Rewritten when the builder is updated; your other files are never touched.
 /** The languages a site can be in. No imports: safe in the browser (`@artin/cms-core/languages`). */
 
 /** Languages offered, with their own names (shown to visitors in the language switcher). */

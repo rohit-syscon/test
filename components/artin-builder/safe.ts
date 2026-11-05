@@ -1,4 +1,4 @@
-// Artin page builder v17. Rewritten when the builder is updated; your other files are never touched.
+// Artin page builder v18. Rewritten when the builder is updated; your other files are never touched.
 /**
  * Every value that reaches CSS or an address goes through here, so a page's
  * data can never write its own CSS or a script URL, even if it got past the
@@ -9,7 +9,18 @@
 
 const HEX = /^#(?:[0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
 const FUNC = /^(?:rgb|rgba|hsl|hsla)\(\s*[0-9.]+%?\s*,?\s*[0-9.]+%?\s*,?\s*[0-9.]+%?\s*(?:[,/]\s*[0-9.]+%?\s*)?\)$/i;
-const NAMED = /^(?:transparent|white|black|currentcolor)$/i;
+/** CSS's own colour names (red, navy, rebeccapurple…): plain words, nothing CSS can be written with. */
+const NAMED = new Set(('transparent currentcolor aliceblue antiquewhite aqua aquamarine azure beige bisque black blanchedalmond blue blueviolet brown burlywood '
+  + 'cadetblue chartreuse chocolate coral cornflowerblue cornsilk crimson cyan darkblue darkcyan darkgoldenrod darkgray darkgreen darkgrey darkkhaki '
+  + 'darkmagenta darkolivegreen darkorange darkorchid darkred darksalmon darkseagreen darkslateblue darkslategray darkslategrey darkturquoise darkviolet '
+  + 'deeppink deepskyblue dimgray dimgrey dodgerblue firebrick floralwhite forestgreen fuchsia gainsboro ghostwhite gold goldenrod gray green greenyellow '
+  + 'grey honeydew hotpink indianred indigo ivory khaki lavender lavenderblush lawngreen lemonchiffon lightblue lightcoral lightcyan lightgoldenrodyellow '
+  + 'lightgray lightgreen lightgrey lightpink lightsalmon lightseagreen lightskyblue lightslategray lightslategrey lightsteelblue lightyellow lime limegreen '
+  + 'linen magenta maroon mediumaquamarine mediumblue mediumorchid mediumpurple mediumseagreen mediumslateblue mediumspringgreen mediumturquoise '
+  + 'mediumvioletred midnightblue mintcream mistyrose moccasin navajowhite navy oldlace olive olivedrab orange orangered orchid palegoldenrod palegreen '
+  + 'paleturquoise palevioletred papayawhip peachpuff peru pink plum powderblue purple rebeccapurple red rosybrown royalblue saddlebrown salmon sandybrown '
+  + 'seagreen seashell sienna silver skyblue slateblue slategray slategrey snow springgreen steelblue tan teal thistle tomato turquoise violet wheat white '
+  + 'whitesmoke yellow yellowgreen').split(' '));
 /** The page's main colour, by name: elements set to it follow the page's accent. */
 export const ACCENT = 'accent';
 /**
@@ -27,7 +38,8 @@ export function color(value: unknown): string | null {
   if (typeof value !== 'string') return null;
   const v = value.trim();
   if (Object.prototype.hasOwnProperty.call(THEME_COLORS, v)) return THEME_COLORS[v]!;
-  return v.length <= 40 && (HEX.test(v) || FUNC.test(v) || NAMED.test(v)) ? v : null;
+  if (NAMED.has(v.toLowerCase())) return v.toLowerCase();
+  return v.length <= 40 && (HEX.test(v) || FUNC.test(v)) ? v : null;
 }
 
 /** A finite number within bounds, or null. */

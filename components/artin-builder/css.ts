@@ -1,4 +1,4 @@
-// Artin page builder v17. Rewritten when the builder is updated; your other files are never touched.
+// Artin page builder v18. Rewritten when the builder is updated; your other files are never touched.
 import { inkOn } from './theme';
 import { BREAKPOINTS, DEVICES, type Background, type Box, type Device, type PageData, type PageNode, type Style } from './types';
 import { color, cssUrl, font, num, oneOf } from './safe';
